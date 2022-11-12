@@ -26,3 +26,25 @@ function playRound(playerSelection, computerSelection){
     else if (playerSelection === "scissors" && computerSelection === "rock")
         return "You Lose, Rock beats Scissors";
 }
+
+function game(){
+    humanScore = 0;
+    computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Chose: Rock , Paper or Scissors");
+        computerSelection = getComputerChoice();
+        result = playRound(playerSelection, computerSelection);
+
+        if (result.charAt(4) === "W")
+            humanScore++;
+        else if (result.charAt(4) === "L")
+            computerScore++;
+        
+        console.log(result);
+        console.log("Your score is " + humanScore );
+        console.log("Computer score is " + computerScore);
+    }
+}
+
+game();
