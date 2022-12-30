@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <script src="./script.js"></script> 
+    <script src="./script.js" defer></script> 
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="panel">
+            <div class="person rockSign"></div>
+            <div class="cpu rockSign"></div>
+        </div>
+        <div class="line"></div>
+    </div>
+    <div class="record">
+        <div class="playerOne">
+            <h3> Player </h3>
+            <div class="shots">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="signs">
+                <div class="rock"></div>
+                <div class="paper"></div>
+                <div class="scissors"></div>
+            </div>
+        </div>
+        <div class="logField">
+            <h4>Result:</h4>
+            <div class="textResult">You Won!</div>
+        </div>
+        <div class="playerTwo">
+            <h3> CPU </h3>
+            <div class="shots">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

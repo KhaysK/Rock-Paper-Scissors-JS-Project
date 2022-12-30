@@ -1,0 +1,134 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel{
+    width: 50%;
+    height: 100%;
+    background: #1f4d67;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 36px;
+}
+
+.line{
+    background: #3fa7aa;
+    width: 51%;
+    height: 20px;
+}
+
+.playerOne, .playerTwo, .logField{
+    padding: 0 16px 0 16px;
+    width: 15%;
+    height: 100%;
+    box-sizing: border-box; 
+    color: white;
+}
+
+.playerOne {
+    background: #235975;
+}
+
+.playerTwo {
+    background: #dc4c65;
+}
+
+.record {
+    width: 100%;
+    height: 22%;
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+
+.logField {
+    width: 10%;
+    height: 100px;
+    background: #3da9ab;
+}
+
+.circle {
+    background: beige;
+    width: 15%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.shots {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signs{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rock {
+    border: 2px dashed black;
+    width: 30%;
+    height: 70%;
+    background: url(./rock.png) center/contain no-repeat;
+}
+
+.paper {
+    border: 2px dashed black;
+    width: 30%;
+    height: 70%;
+    background: url(./paper.png) center/contain no-repeat;
+}
+
+.scissors {
+    border: 2px dashed black;
+    width: 30%;
+    height: 70%;
+    background: url(./scissors.png) center/contain no-repeat;
+}
+
+.rockSign{
+    background: url(./rock.png) center/contain no-repeat;
+    width: 30%;
+    height: 50%;
+}
+
+.paperSign {
+    background: url(./paper.png) center/contain no-repeat;
+    width: 30%;
+    height: 50%;
+}
+
+.scissorsSign{
+    background: url(./scissors.png) center/contain no-repeat;
+    width: 30%;
+    height: 50%;
+}
+
+.cpu{
+    transform: scaleX(-1);
+}
+
+.won {
+    background-color: #3da9ab;
+}
