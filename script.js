@@ -5,6 +5,10 @@ function getComputerChoice(){
     else if (choice === 2) return "scissors";
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
 
@@ -27,10 +31,22 @@ function playRound(playerSelection, computerSelection){
         return "You Lost Round!";
 }
 
-function game(choice){
+async function game(choice){
     playerSelection = choice;
     playerSign.classList.remove(playerLastChoice + "Sign");
     cpuSign.classList.remove(cpuLastChoice + "Sign");
+    
+    playerSign.classList.add("rockSign");
+    cpuSign.classList.add("rockSign");
+    playerSign.classList.add("slide-top");
+    cpuSign.classList.add("slide-top-reverse");
+
+    await sleep(2000);
+
+    playerSign.classList.remove("rockSign");
+    cpuSign.classList.remove("rockSign");
+    playerSign.classList.remove("slide-top");
+    cpuSign.classList.remove("slide-top-reverse");
     
     playerLastChoice = choice;
 
@@ -99,6 +115,30 @@ let cpuLastChoice = "rock";
 let humanScore = 0;
 let computerScore = 0;
 
-rock.addEventListener('click', () => game('rock'));
-paper.addEventListener('click', () => game('paper'));
-scissors.addEventListener('click', () => game('scissors'));
+rock.addEventListener('click', () => {
+    rock.classList.add('clickedBtn');
+    game('rock');
+});
+paper.addEventListener('click', () => {
+    paper.classList.add('clickedBtn');
+    game('paper');
+});
+scissors.addEventListener('click', () => {
+    scissors.classList.add('clickedBtn');
+    game('scissors')
+});
+
+rock.addEventListener('transitionend', function(e){
+      if (e.propertyName !== 'transform') return;
+      this.classList.remove('clickedBtn');
+});
+
+paper.addEventListener('transitionend', function(e){
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('clickedBtn');
+});
+
+scissors.addEventListener('transitionend', function(e){
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('clickedBtn');
+});
